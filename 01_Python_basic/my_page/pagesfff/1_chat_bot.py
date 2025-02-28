@@ -3,7 +3,7 @@ import asyncio
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-import localDB
+# import localDB
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
@@ -11,7 +11,7 @@ if "chat_history" not in st.session_state:
 
 user_input = st.chat_input("입력")
 
-localDB.insertData('Me',user_input)
+# localDB.insertData('Me',user_input)
 
 def format_chat_history():
     history_text = ""
@@ -29,7 +29,7 @@ ai_prompt = ChatPromptTemplate.from_messages([
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-1.5-pro",
-    google_api_key='',
+    google_api_key='AIzaSyCD0RV4LrDf3C1AWYj0venEFDGunzXTlwI',
     temperature=0
 )
 
@@ -59,7 +59,7 @@ async def generate_response(user_text, ai_placeholder):
                 
                 ai_placeholder.markdown(f"**AI:** {result_text}")
                 
-    localDB.insertData('AI',result_text)                
+    # localDB.insertData('AI',result_text)                
     st.session_state.chat_history.append({"role": "assistant", "content": result_text})
     return result_text
 

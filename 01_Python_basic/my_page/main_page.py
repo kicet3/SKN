@@ -1,3 +1,10 @@
 import streamlit as st
+import time
 
-st.header('AI 채팅 및 채팅 로그 조회 서비스 입니다.')
+with st.sidebar:
+    with st.echo():
+        st.write("This code will be printed to the sidebar.")
+
+    with st.spinner("Loading..."):
+        time.sleep(5)
+    st.success("Done!")

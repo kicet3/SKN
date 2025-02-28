@@ -5,6 +5,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 import time
 
@@ -16,8 +17,8 @@ chrome_options.add_argument("--disable-blink-features=AutomationControlled")
 
 # text = input('검색어를 입력 : ')                                       
 # 1. 크롬 실행
-path = 'chromedriver.exe'
-# service = webdriver.Chrome.service.Service(path)
+path = './chromedriver.exe'
+service = Service(path)
 driver = webdriver.Chrome()
 
 # 2. 특정 URL 접근
