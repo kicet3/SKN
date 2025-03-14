@@ -10,7 +10,7 @@ config = {
 
 # menu_code가 100번이상인 메뉴 삭제
 
-cnx = mysql.connector.confffnect(**config)
+cnx = mysql.connector.connect(**config)
 
 sql = "DELETE FROM tbl_menu WHERE menu_code>=100"
 cursor = cnx.cursor()
